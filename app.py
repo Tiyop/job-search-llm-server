@@ -13,7 +13,14 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 # sanity check route
 @app.route('/ping', methods=['GET'])
 def ping_pong():
-    return jsonify('pong!')
+    return jsonify('pong')
+
+@app.route('/keyword', methods=['GET'])
+def get_job_search_keywords():
+    return jsonify({
+        'status': 'success',
+        'keywords': []
+    })
 
 
 if __name__ == '__main__':
